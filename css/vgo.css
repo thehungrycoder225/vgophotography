@@ -179,6 +179,64 @@ nav {
   object-fit: cover;
 }
 
+/* About */
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1 1 40rem;
+  position: relative;
+}
+.about-image h5 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  letter-spacing: 2rem;
+  color: #ffac41;
+  font-family: "Liquido";
+  font-size: var(--header3);
+  background: rgba(50, 50, 50, 0.507);
+  padding: 3rem 2rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 2 1 40rem;
+  justify-content: space-around;
+  color: white;
+  background: var(--background-color);
+}
+
+.about-text div {
+  padding: 3rem 8rem;
+}
+
+.about-text h2 {
+  padding: 4rem;
+  font-family: "HPro";
+  color: var(--special-color);
+  font-size: 10rem;
+}
+
+.about-text h3 {
+  padding: 2rem 0rem;
+  font-family: "mVI";
+  color: #00a8cc;
+}
+
+.about-text p {
+  font-size: var(--text);
+  font-family: "HPro";
+}
 /* Animations */
 
 @keyframes opening {
@@ -259,5 +317,10 @@ nav {
     color: var(--special-color);
     font-size: var(--header3);
     font-size: 10rem;
+  }
+
+  /* About Section */
+  .about-text div {
+    padding: 3rem 3rem;
   }
 }
