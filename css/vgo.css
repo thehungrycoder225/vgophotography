@@ -285,6 +285,7 @@ nav {
 .gallery-header p {
   font-family: "Liquido";
   color: #ff1e56;
+  font-size: var(--big);
 }
 .gallery img {
   width: 100%;
