@@ -25,11 +25,12 @@ html {
   --header3: calc(3rem + 1vw);
   --header4: calc(2.4rem + 1vw);
   --text: calc(1.5rem + 1vw);
-  --big: calc(2.4rem + 1vw);
+  --big: calc(10rem + 1vw);
   --special-color: #ff1e56;
   --primary-color: #ffac41;
   --secondary-color: #000000;
   --background-color: #323232;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -88,7 +89,7 @@ a {
   top: 0;
   background-color: var(--background-color);
   box-shadow: 0px 10px 20px rgba(255, 30, 86, 0.7);
-  position: relative;
+  z-index: 100;
 }
 
 nav {
@@ -97,12 +98,21 @@ nav {
   align-items: center;
   width: 90%;
   margin: auto;
-  min-height: 10vh;
+  min-height: 5vh;
   padding: 1rem 0;
 }
 
 #logo {
   flex: 2 1 20rem;
+  font-size: 5rem;
+}
+
+#logo a {
+  transition: 0.5s ease-in-out;
+}
+#logo a:hover {
+  color: #ffac41;
+  transition: 0.5s ease-in-out;
 }
 .nav-links {
   display: flex;
@@ -124,9 +134,10 @@ nav {
 .hero {
   display: flex;
   flex-wrap: wrap;
-  min-height: 90vh;
+  min-height: 100vh;
   width: 95%;
   margin: 0 0 0 auto;
+  position: relative;
 }
 
 .hero-intro {
@@ -137,7 +148,7 @@ nav {
 .hero-intro h2 {
   position: relative;
   font-family: "HPro";
-  font-size: 20rem;
+  font-size: calc(20rem + 1vw);
   color: var(--special-color);
   padding: 3rem 0 0 0;
   z-index: -1;
@@ -145,10 +156,10 @@ nav {
 
 .hero-intro span {
   font-family: "mVI";
-  font-size: 15rem;
+  font-size: calc(10rem + 1vw);
   position: absolute;
-  top: 15rem;
-  left: -5rem;
+  top: 55%;
+  left: -5%;
   color: #00a8cc;
 }
 .hero-intro p {
@@ -178,6 +189,7 @@ nav {
   height: 100%;
   object-fit: cover;
 }
+/* Hero */
 
 /* About */
 .about {
@@ -189,6 +201,7 @@ nav {
 .about-image {
   flex: 1 1 40rem;
   position: relative;
+  z-index: -1;
 }
 .about-image h5 {
   position: absolute;
@@ -237,6 +250,149 @@ nav {
   font-size: var(--text);
   font-family: "HPro";
 }
+
+/* About */
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 100vh;
+  position: relative;
+}
+
+.gallery-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: linear-gradient(
+    -45deg,
+    rgba(50, 50, 50, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+  padding: 3rem 5rem;
+}
+
+.gallery-header h2 {
+  font-family: "HPro";
+  font-size: 15rem;
+  color: white;
+  opacity: 0.7;
+}
+
+.gallery-header p {
+  font-family: "mVI";
+  color: #ffac41;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery_3 {
+  grid-column: 2/4;
+}
+
+.gallery_4 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+/* Gallery */
+
+/* Contact */
+.contact {
+  min-height: 90vh;
+  display: flex;
+  flex: wrap;
+  background-color: #000000;
+}
+
+.form-wrapper {
+  flex: 3 1 40rem;
+  text-align: center;
+}
+
+.form-wrapper h2 {
+  color: var(--special-color);
+  font-family: "HPro";
+}
+
+.form-wrapper span {
+  font-size: var(--big);
+  font-family: "mVI";
+  color: #00a8cc;
+}
+
+.form-wrapper label {
+  display: block;
+  font-family: "mVI";
+  color: var(--primary-color);
+  font-size: var(--header2);
+}
+.form-wrapper input {
+  display: block;
+  margin: 3rem 0rem;
+  border: 1px solid #ffac41;
+  font-size: var(--header4);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.form-wrapper button {
+  padding: 1rem 8rem;
+  background-color: var(--special-color);
+  font-family: "HPro";
+  color: white;
+  border: 1px solid #ff1e56;
+  transition: all 0.5 ease-in;
+}
+
+.form-wrapper button:hover {
+  color: var(--special-color);
+  border: 1px solid #ff1e56;
+  background: white;
+  transition: all 0.5s ease-in-out;
+}
+.contact img {
+  flex: 1 1 40rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Contact */
+
+/* Footer */
+footer {
+  background-color: var(--background-color);
+  display: flex;
+  color: var(--special-color);
+  padding: 3rem 5%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer h4 {
+  flex: 3 1 40rem;
+  font-family: "mVI";
+  font-size: calc(1.5rem + 1vw);
+}
+
+footer span {
+  font-family: "Liquido";
+  font-size: calc(1rem + 1vw);
+}
+
+footer ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Footer */
+
 /* Animations */
 
 @keyframes opening {
@@ -260,6 +416,7 @@ nav {
   .burger {
     position: relative;
     display: block;
+    cursor: pointer;
   }
   .burger span {
     padding: 0.2rem 2rem;
@@ -268,35 +425,22 @@ nav {
     display: block;
     transition: all 0.5s ease;
   }
-  .menu-checked {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translate(5%, -50%);
-    width: 5rem;
-    height: 5rem;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 100;
-  }
 
-  .menu-checked:checked + .nav-links {
+  .nav-open {
     transform: translateX(-100%);
   }
 
-  .menu-checked:checked ~ .burger span {
+  .toggle .line1 {
+    transform: rotateZ(45deg) translateY(300%);
     background: #00a8cc;
   }
-
-  .menu-checked:checked ~ .burger span:nth-child(1) {
-    transform: rotateZ(45deg) translateY(300%);
-  }
-  .menu-checked:checked ~ .burger span:nth-child(2) {
+  .toggle .line2 {
     opacity: 0;
   }
-  .menu-checked:checked ~ .burger span:nth-child(3) {
+
+  .toggle .line3 {
     transform: rotateZ(-45deg) translateY(-300%);
+    background: #00a8cc;
   }
 
   .nav-links {
@@ -310,17 +454,71 @@ nav {
     align-items: center;
     transition: transform 0.5s ease;
   }
-  #logo {
-    font-size: 5rem;
-  }
   .nav-links a {
     color: var(--special-color);
     font-size: var(--header3);
     font-size: 10rem;
   }
 
+  /* Intro */
+  .hero {
+    width: 100%;
+    margin: auto;
+  }
+
+  .hero h2 {
+    font-size: var(--big);
+  }
+
+  .hero span {
+    font-size: var(--header2);
+    transform: translate(100%, -50%);
+  }
+
+  .hero p {
+    font-size: --;
+  }
   /* About Section */
   .about-text div {
     padding: 3rem 3rem;
+  }
+
+  /* Gallery */
+  .gallery img {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+
+  .gallery-header {
+    display: none;
+  }
+
+  /* Contact */
+  .contact img {
+    display: none;
+  }
+
+  footer ul {
+    order: 1;
+  }
+
+  footer h4 {
+    order: 2;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  html {
+    --header1: 3rem;
+    --header2: 4.5rem;
+    --header3: 3.5rem;
+    --header4: 2.5rem;
+    --text: 2.5rem;
+    --big: 6rem;
   }
 }
