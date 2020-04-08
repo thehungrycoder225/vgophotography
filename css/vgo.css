@@ -35,6 +35,7 @@ html {
 body {
   font-family: "Noir", sans-serif;
   box-sizing: border-box;
+  animation: opening 1s ease-in-out;
 }
 
 li,
@@ -111,6 +112,15 @@ nav {
   font-family: "Liquido";
 }
 
+.nav-links li a {
+  transition: 0.5s ease-in-out;
+}
+.nav-links li a:hover {
+  color: var(--primary-color);
+  transition: 0.5s ease-in-out;
+}
+
+/* Introduction */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -130,7 +140,7 @@ nav {
   font-family: "HPro";
   font-size: 20rem;
   color: var(--special-color);
-  z-index: 1;
+  padding: 3rem 0 0 0;
 }
 
 .hero-intro span {
@@ -142,10 +152,23 @@ nav {
   color: #00a8cc;
 }
 .hero-intro p {
-  margin: 5rem 0;
+  padding: 5rem 10rem;
   color: var(--background-color);
 }
 
+.hero-intro a {
+  border: 1px solid #ff1e56;
+  font-family: "HPro";
+  padding: 2rem 8rem;
+  margin: 4rem;
+  transition: 0.5s ease-in-out;
+}
+
+.hero-intro a:hover {
+  background: var(--special-color);
+  color: white;
+  transition: 0.5s ease-in-out;
+}
 .hero-images {
   flex: 1 1 40rem;
 }
@@ -154,4 +177,15 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Animations */
+
+@keyframes opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
