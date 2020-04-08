@@ -132,7 +132,6 @@ nav {
 .hero-intro {
   flex: 2 1 40rem;
   text-align: center;
-  position: relative;
 }
 
 .hero-intro h2 {
@@ -141,6 +140,7 @@ nav {
   font-size: 20rem;
   color: var(--special-color);
   padding: 3rem 0 0 0;
+  z-index: -1;
 }
 
 .hero-intro span {
@@ -187,5 +187,77 @@ nav {
   }
   to {
     opacity: 1;
+  }
+}
+
+.burger,
+.menu-checked {
+  display: none;
+}
+
+/* Media Queries */
+
+/* Burger Menu */
+@media screen and (max-width: 900px) {
+  .burger {
+    position: relative;
+    display: block;
+  }
+  .burger span {
+    padding: 0.2rem 2rem;
+    background: var(--special-color);
+    margin: 0.5rem 0;
+    display: block;
+    transition: all 0.5s ease;
+  }
+  .menu-checked {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(5%, -50%);
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 100;
+  }
+
+  .menu-checked:checked + .nav-links {
+    transform: translateX(-100%);
+  }
+
+  .menu-checked:checked ~ .burger span {
+    background: #00a8cc;
+  }
+
+  .menu-checked:checked ~ .burger span:nth-child(1) {
+    transform: rotateZ(45deg) translateY(300%);
+  }
+  .menu-checked:checked ~ .burger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-checked:checked ~ .burger span:nth-child(3) {
+    transform: rotateZ(-45deg) translateY(-300%);
+  }
+
+  .nav-links {
+    background: var(--background-color);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease;
+  }
+  #logo {
+    font-size: 5rem;
+  }
+  .nav-links a {
+    color: var(--special-color);
+    font-size: var(--header3);
+    font-size: 10rem;
   }
 }
